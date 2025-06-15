@@ -39,26 +39,22 @@
         modules = [
           # impermanence
           impermanence.nixosModules.impermanence
-          
+
           # main config
-          ./nixos/configuration.nix
+          ./hosts/lydia
 
           # home manager
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+
             home-manager.users.feli = {
               imports = [
-                ./home-manager/home.nix
+                ./home/home.nix
                 catppuccin.homeModules.catppuccin
               ];
             };
-          }
-
-          # alejandra (nix code formatter)
-          {
-            environment.systemPackages = [alejandra.defaultPackage.x86_64-linux];
           }
         ];
       };
