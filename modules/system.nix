@@ -125,5 +125,7 @@
     which
     tree
     rsync
+    
+    ausweisapp
   ];
 }
