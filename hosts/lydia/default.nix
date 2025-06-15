@@ -1,17 +1,12 @@
-let
-  hostName = "lydia";
-in {
+{
   imports = [
     ../../modules/system.nix
     ./persist.nix
     ./hardware-configuration.nix
-  ]
+  ];
 
-  networking = {
-    inherit hostName;
-
-    networkmanager.enable = true;
-  }
+  networking.hostName = "lydia";
+  networking.networkmanager.enable = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

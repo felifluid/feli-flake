@@ -7,13 +7,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./persist.nix
-    ../impermanence/persist.nix # load impermanence config
-  ];
-
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
@@ -124,7 +117,7 @@
     };
   };
 
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     wget
     curl
     git
