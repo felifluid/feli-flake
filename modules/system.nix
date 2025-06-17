@@ -29,6 +29,13 @@
   # allow unfree
   nixpkgs.config.allowUnfree = true;
 
+  # garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # networking
   networking.hostName = "lydia"; # Define your hostname.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
