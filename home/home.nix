@@ -4,7 +4,16 @@
     homeDirectory = "/home/feli";
   };
 
-  home.packages = with pkgs; [xclip tree ripgrep typst vesktop signal-desktop];
+  home.packages = with pkgs; [
+    xclip 
+    tree 
+    ripgrep 
+    typst 
+    vesktop 
+    signal-desktop
+    sops
+    age
+  ];
 
   dconf.settings = {
     "org/gnome/shell" = {
@@ -152,6 +161,11 @@
 
   # Create empty ~/Code folder
   home.file."Code/.info" = {
+    enable = true;
+    text = "This directory was created automatically by Home Manager.";
+  };
+
+  home.file.".config/sops/age/.info" = {
     enable = true;
     text = "This directory was created automatically by Home Manager.";
   };
