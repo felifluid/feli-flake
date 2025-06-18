@@ -79,12 +79,16 @@
     packages = with pkgs; [
       tree
     ];
+    shell = pkgs.zsh;
+
     # temp
     initialHashedPassword = "$6$u43bjN7FXqWosGcr$FmES6B3HcbiUJLYnAni8AmQROo.wc/EUW1LRZEg4HCRUTmgui1xv7g5pn7okhcmrGAdocCY3KYRPKc5s8NQDZ.";
   };
 
   programs = {
-    zsh.enable = true;
+    zsh = {
+      enable = true;
+    };
 
     steam = {
       enable = true;
