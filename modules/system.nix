@@ -69,6 +69,9 @@
   # !! OMITTING THIS WILL RESULT IN A SYSTEM LOCKOUT. !!
   users.mutableUsers = false;
 
+  # make zsh the default shell
+  users.defaultUserShell = pkgs.zsh;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.feli = {
     isNormalUser = true;
