@@ -18,6 +18,9 @@
 
     # Catppuccin
     catppuccin.url = "github:catppuccin/nix";
+
+    # SOPS
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = {
@@ -27,6 +30,7 @@
     impermanence,
     alejandra,
     catppuccin,
+    sops-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -53,6 +57,7 @@
               imports = [
                 ./home/home.nix
                 catppuccin.homeModules.catppuccin
+                sops-nix.homeManagerModules.sops
               ];
             };
           }
