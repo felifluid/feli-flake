@@ -4,7 +4,7 @@
     homeDirectory = "/home/feli";
   };
 
-  home.packages = with pkgs; [xclip tree ripgrep typst vesktop signal-desktop];
+  home.packages = with pkgs; [xclip tree ripgrep typst vesktop signal-desktop spotify];
 
   dconf.settings = {
     "org/gnome/shell" = {
