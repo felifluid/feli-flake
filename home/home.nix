@@ -4,7 +4,7 @@
     homeDirectory = "/home/feli";
   };
 
-  home.packages = with pkgs; [xclip tree ripgrep typst vesktop signal-desktop spotify];
+  home.packages = with pkgs; [xclip tree ripgrep typst vesktop signal-desktop spotify obsidian];
 
   dconf.settings = {
     "org/gnome/shell" = {
@@ -106,6 +106,8 @@
       };
     };
   };
+
+  
 
   # TODO: move to flake
   services = {
