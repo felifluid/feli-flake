@@ -139,6 +139,8 @@
     which
     tree
     rsync
+
+    direnv
     
     ausweisapp
   ];
