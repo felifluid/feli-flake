@@ -103,6 +103,7 @@
           "editor.formatOnType" = false;
         };
         "alejandra.program" = "alejandra";
+        "git.confirmSync"= false;
       };
     };
   };
