@@ -4,7 +4,7 @@
     homeDirectory = "/home/feli";
   };
 
-  home.packages = with pkgs; [xclip tree ripgrep typst vesktop signal-desktop spotify obsidian];
+  home.packages = with pkgs; [xclip tree ripgrep typst vesktop signal-desktop spotify obsidian libreoffice];
 
   dconf.settings = {
     "org/gnome/shell" = {
