@@ -116,7 +116,7 @@
       enable = true;
       overrideDevices = true; # overrides any devices added or deleted through the WebUI
       overrideFolders = true; # overrides any folders added or deleted through the WebUI
-      # NOTE: this needs to be adjusted per device
+      # NOTE: this needs to be adjusted per device... does it?
       settings = {
         options = {
           urAccepted = -1;
