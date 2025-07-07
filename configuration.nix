@@ -10,7 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../impermanence/persist.nix # load impermanence config
+    ./impermanence/persist.nix # load impermanence config
   ];
 
   # This will add each flake input as a registry
@@ -40,7 +40,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # networking
-  networking.hostName = "lydia"; # Define your hostname.
+  networking.hostName = "deli"; # Define your hostname.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set time zone.
@@ -97,7 +97,11 @@
     };
   };
 
-  environment.systemPackages = [];
+  environment.systemPackages = with pkgs; [
+    spotify
+    git
+    wget
+  ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

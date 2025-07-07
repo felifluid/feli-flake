@@ -151,7 +151,7 @@
   };
 
   # Create empty ~/Code folder
-  home.file."Code/.info" = {
+  home.file."Git/.info" = {
     enable = true;
     text = "This directory was created automatically by Home Manager.";
   };

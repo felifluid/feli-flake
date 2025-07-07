@@ -39,9 +39,9 @@
         modules = [
           # impermanence
           impermanence.nixosModules.impermanence
-          
+
           # main config
-          ./nixos/configuration.nix
+          ./lydia.configuration.nix
 
           # home manager
           home-manager.nixosModules.home-manager
@@ -56,9 +56,40 @@
             };
           }
 
-          # alejandra (nix code formatter)
           {
-            environment.systemPackages = [alejandra.defaultPackage.x86_64-linux];
+            environment.systemPackages = [
+              alejandra.defaultPackage.x86_64-linux # alejandra (nix code formatter)
+            ];
+          }
+        ];
+      };
+
+      lydia = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # impermanence
+          impermanence.nixosModules.impermanence
+
+          # main config
+          ./configuration.nix
+
+          # home manager
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.feli = {
+              imports = [
+                ./home-manager/home.nix
+                catppuccin.homeModules.catppuccin
+              ];
+            };
+          }
+
+          {
+            environment.systemPackages = [
+              alejandra.defaultPackage.x86_64-linux # alejandra (nix code formatter)
+            ];
           }
         ];
       };
