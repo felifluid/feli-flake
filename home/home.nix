@@ -4,7 +4,7 @@
     homeDirectory = "/home/feli";
   };
 
-  home.packages = with pkgs; [xclip tree ripgrep typst vesktop signal-desktop];
+  home.packages = with pkgs; [xclip tree ripgrep typst vesktop signal-desktop spotify obsidian libreoffice];
 
   dconf.settings = {
     "org/gnome/shell" = {
@@ -48,6 +48,13 @@
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
+      oh-my-zsh = {
+        enable = true;
+        plugins = [
+          "git"
+          "direnv"
+        ];
+      };
     };
 
     neovim = {
@@ -96,9 +103,12 @@
           "editor.formatOnType" = false;
         };
         "alejandra.program" = "alejandra";
+        "git.confirmSync"= false;
       };
     };
   };
+
+  
 
   # TODO: move to flake
   services = {
