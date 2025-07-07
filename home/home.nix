@@ -19,7 +19,7 @@
       ];
     };
     "org/gnome/desktop/background" = {
-      "picture-uri" = "file:///home/feli/.local/share/backgrounds/2025-06-10-11-04-08-nix-wallpaper-nineish-catppuccin-frappe-alt.png";
+      "picture-uri" = "file:///home/feli/Git/feli-flake/wallpaper/nix-wallpaper-nineish-catppuccin-frappe-alt.png";
     };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
@@ -59,6 +59,11 @@
 
     neovim = {
       enable = true;
+    };
+
+    lutris = {
+      enable = true;
+      extraPackages = with pkgs; [mangohud winetricks gamescope gamemode umu-launcher];
     };
 
     firefox = {
